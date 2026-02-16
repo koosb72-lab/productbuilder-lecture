@@ -5,6 +5,8 @@
   --title: #333333;
   --button: #007bff;
   --button-hover: #0056b3;
+  --muted: #5d6673;
+  --line: #d8dde6;
 }
 
 body[data-theme='dark'] {
@@ -14,6 +16,8 @@ body[data-theme='dark'] {
   --title: #f3f7fb;
   --button: #4b89ff;
   --button-hover: #6da0ff;
+  --muted: #c4cfda;
+  --line: #334156;
 }
 
 body {
@@ -29,12 +33,13 @@ body {
 }
 
 .container {
-  text-align: center;
+  text-align: left;
   background-color: var(--panel);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: background-color 0.25s ease;
+  width: min(90vw, 560px);
 }
 
 .header-row {
@@ -50,26 +55,61 @@ h1 {
   margin: 0;
 }
 
-.lotto-numbers-container {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 32px;
+.subtitle {
+  margin: 0 0 18px;
+  color: var(--muted);
 }
 
-.lotto-number {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
+.controls {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-#generate-btn {
+.controls label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.controls select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.menu-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.menu-category {
+  margin: 0;
+  font-size: 13px;
+  color: var(--button);
+  font-weight: 600;
+}
+
+.menu-name {
+  margin: 0;
+  font-size: 30px;
+}
+
+.menu-description {
+  margin: 0;
+  color: var(--muted);
+}
+
+#recommend-btn {
   background-color: var(--button);
   color: white;
   border: none;
@@ -80,7 +120,7 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-#generate-btn:hover {
+#recommend-btn:hover {
   background-color: var(--button-hover);
 }
 
@@ -100,15 +140,15 @@ body[data-theme='dark'] #theme-toggle-btn {
 
 @media (max-width: 640px) {
   .container {
-    width: min(90vw, 420px);
     padding: 24px;
   }
 
   .header-row {
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  .lotto-numbers-container {
-    flex-wrap: wrap;
+  .menu-name {
+    font-size: 24px;
   }
 }

@@ -1,19 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lotto Number Generator</title>
+  <title>저녁 메뉴 추천</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
 <body>
   <div class="container">
     <div class="header-row">
-      <h1>Lotto Number Generator</h1>
+      <h1>오늘 저녁 뭐 먹지?</h1>
       <button id="theme-toggle-btn" type="button" aria-label="Toggle theme">Dark Mode</button>
     </div>
-    <div id="lotto-numbers" class="lotto-numbers-container"></div>
-    <button id="generate-btn">Generate Numbers</button>
+
+    <p class="subtitle">카테고리를 고르고 버튼을 누르면 저녁 메뉴를 추천해드려요.</p>
+
+    <div class="controls">
+      <label for="category-select">메뉴 카테고리</label>
+      <select id="category-select">
+        <option value="all">전체</option>
+        <option value="한식">한식</option>
+        <option value="중식">중식</option>
+        <option value="일식">일식</option>
+        <option value="양식">양식</option>
+        <option value="분식">분식</option>
+        <option value="간편식">간편식</option>
+      </select>
+    </div>
+
+    <div id="menu-result" class="menu-card">
+      <p id="menu-category" class="menu-category"></p>
+      <h2 id="menu-name" class="menu-name"></h2>
+      <p id="menu-description" class="menu-description"></p>
+    </div>
+
+    <button id="recommend-btn">메뉴 추천받기</button>
   </div>
   <script defer type="text/javascript" src="/main.js"></script>
 </body>
