@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinner Menu Recommender</title>
+  <link href='/style.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="container">
+    <div class="header-row">
+      <h1>What should I eat tonight?</h1>
+      <button id="theme-toggle-btn" type="button" aria-label="Toggle theme">Dark Mode</button>
+    </div>
+
+    <p class="subtitle">Choose a category and get a dinner recommendation instantly.</p>
+
+    <div class="lang-links">
+      <a href="/index.html">KR</a>
+      <span>/</span>
+      <a href="/en.html" aria-current="page">EN</a>
+    </div>
+
+    <div class="controls">
+      <label for="category-select">Category</label>
+      <select id="category-select">
+        <option value="all">All</option>
+        <option value="Korean">Korean</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Western">Western</option>
+        <option value="Snack">Snack</option>
+        <option value="Light">Light</option>
+      </select>
+    </div>
+
+    <div id="menu-result" class="menu-card">
+      <p id="menu-category" class="menu-category"></p>
+      <h2 id="menu-name" class="menu-name"></h2>
+      <p id="menu-description" class="menu-description"></p>
+    </div>
+
+    <button id="recommend-btn">Recommend Dinner</button>
+  </div>
+  <script defer type="text/javascript" src="/main-en.js"></script>
+</body>
+</html>

@@ -60,6 +60,24 @@ h1 {
   color: var(--muted);
 }
 
+.lang-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.lang-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.lang-links a[aria-current='page'] {
+  color: var(--text);
+  font-weight: 700;
+}
+
 .controls {
   display: grid;
   gap: 8px;
